@@ -1,6 +1,6 @@
 import glob
 
-input_files = glob.glob("/home/shubhi/Downloads/*.json")
+input_files = sorted(glob.glob("/home/shubhi/Downloads/*.json"))
 
 
 # def slice(s):
@@ -11,7 +11,7 @@ def main():
 	
 	with file("finalOutput.json", "w") as outputFile:
 	        firstFile = True
-	        for inputFileName in reversed(input_files):
+	        for inputFileName in input_files:
 	            with file(inputFileName) as inputFile:
 	                if firstFile:
 	                    outputFile.write('[')

@@ -13,7 +13,7 @@ The approch followed by us to solve this problem is given in greater detail in t
 
 ### Scores on http://neurofinder.codeneuro.org/, The home of this project.
 
-![Scores](scores.jpg "scores on http://neurofinder.codeneuro.org/")
+![Scores](scores.JPG "scores on http://neurofinder.codeneuro.org/")
 
 ##### Output format
 The output is a json file with regions and its corresponding coordinates. The coordinates represent the pixel pair that are found in the image for an identified neuron. The output is compared to the ground truth on the following,

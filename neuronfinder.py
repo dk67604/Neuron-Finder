@@ -6,13 +6,16 @@ from extraction import NMF
 from scipy.ndimage.interpolation import shift
 from scipy.ndimage.filters import gaussian_filter
 from pyspark import SparkConf
+
 ###################################################
 # Code for creating context for Spark
-####################################################
+###################################################
+
 conf = SparkConf().set("spark.driver.maxResultSize", "3g")
 sc = SparkContext(conf=conf)
 
-submission=[] #List for storing ROI co-ordinates
+#List for storing ROI co-ordinates
+submission=[]
 
 def main(config_data):
 
@@ -33,7 +36,8 @@ def main(config_data):
 
     ####################################################################################
     # Code for Local Non-negative Matrix Factorization for Image Extraction
-    #####################################################################################                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          #print (frequencies)
+    ####################################################################################
+                                                                                                                
     algorithm = NMF(k=int(config_data["k"]), percentile=int(config_data["percentile"]),min_size=int(config_data["min_size"]),
                     max_iter=int(config_data["max_iter_nmf"]), overlap=float(config_data["overlap_nmf"]))
 
